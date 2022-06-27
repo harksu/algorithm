@@ -1,14 +1,14 @@
 
 
-def mySolt(list):
-    listLength = len(list)-1
-    for j in range (listLength):
+def mySolt(list): #탐색 하기 전에 일단 정렬 
+    listLength = len(list)-1 # 반복문을 위한 배열문 길이 저장(비교를 해야하므로 1을 제외) => 배열의 인덱스에 접근할 땐 1을 빼고, 단순 출력 반복문이면 그냥 돌리고 
+    for j in range (listLength): # 완전 정렬을 위해서 2중 for문
         for i in range (listLength):
             if list[i] > list[i+1]:
                 temp = list[i]
                 list[i]=list[i+1]
                 list[i+1] = temp
-    return list
+    return list #그리고 정렬 된 리스트를 반환 
     
     
 def showList(list):
