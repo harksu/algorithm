@@ -53,24 +53,37 @@ class linkedLIst:
         append_point.next.next = temp_point
         self.count += 1
         return 
-        
     
+    def delete_index(self,index): #이게 구현이 노드를 리턴해주면 편한데, 그래도 일단 이렇게 했으니까 한번 해보자
+        if(index < 0):
+            print("인덱스는 0부터 시작입니다.")
+            return 
+        if(index > self.count):
+            print("인덱스의 수가 링크 수 보다 큽니다")
+            return
+        if(index == 0):
+            self.headNode = self.headNode.next
+            self.count -=1
+            return
+        
+        delete_point = self.headNode
+        before_point = self.headNode
+        for i in range (index):
+            if (i != 0):
+                before_point = before_point.next
+            delete_point = delete_point.next
+        temp_point = delete_point.next
+        before_point.next = temp_point
+        self.count -= 1
+        return    
+            
+            
     def showAll(self):
         tail = self.headNode
         while(tail is not None):
             print(tail.data, end = " ")
             print("->",end=" ")
             tail = tail.next
-            
+        print()
    
         
-test = linkedLIst()
-test.append(1)  
-test.append(2)
-test.append(3)
-test.append(4)
-test.append_index(5,1)
-
-
-test.showAll() 
-   
