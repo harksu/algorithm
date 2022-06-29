@@ -46,7 +46,7 @@ class linkedLIst:
             self.count += 1
             return
         
-        for i in range (index):
+        for i in range (index-1): #근데 이게 베스트 로직은 절대 아닐 것 같음 
             append_point = append_point.next
         temp_point = append_point.next
         append_point.next = node(data)
@@ -69,7 +69,7 @@ test.append(1)
 test.append(2)
 test.append(3)
 test.append(4)
-test.append_index(5,0)
+test.append_index(5,1)
 
 
 test.showAll() 
