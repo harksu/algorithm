@@ -1,7 +1,3 @@
-#대충 각 자리로 나눠서 계속 더하는 수열인듯 , 근데 셀프 넘버를 찾아야함
-#1234 에서 4는 10으로 나눈거의 나머지고 
-from os import remove
-
 
 answers = []
 for i in range(10000):
@@ -19,12 +15,10 @@ def func(number,lists):
     if(number>10000):
         return
     func(result,lists)
-    
 for i in range(10000):
     func(i+1,answers)
 for i in set(removelist):
     answers.remove(i)
-
 for i in answers:
     print(i)
 
